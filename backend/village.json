@@ -1,0 +1,49 @@
+{
+  "name": "Hollowmere",
+  "width": 48,
+  "height": 32,
+  "tile_size": 24,
+  "buildings": [
+    { "name": "Bakery",    "x": 3,  "y": 2,  "w": 9,  "h": 8, "door": [7, 9],   "color": "#b5651d" },
+    { "name": "Tavern",    "x": 15, "y": 2,  "w": 11, "h": 8, "door": [20, 9],  "color": "#8c4a2f" },
+    { "name": "Cottage A", "x": 2,  "y": 13, "w": 7,  "h": 7, "door": [5, 19],  "color": "#6b7a8f" },
+    { "name": "Cottage B", "x": 10, "y": 13, "w": 7,  "h": 7, "door": [13, 19], "color": "#6b7a8f" },
+    { "name": "Cottage C", "x": 2,  "y": 22, "w": 7,  "h": 7, "door": [5, 28],  "color": "#6b7a8f" },
+    { "name": "Workshop",  "x": 11, "y": 22, "w": 10, "h": 7, "door": [15, 28], "color": "#5d5d5d" },
+    { "name": "Town Hall", "x": 23, "y": 22, "w": 11, "h": 7, "door": [28, 28], "color": "#7a6b8f" }
+  ],
+  "zones": [
+    { "name": "Market", "x": 30, "y": 2,  "w": 16, "h": 8, "color": "#c9a227" },
+    { "name": "Park",   "x": 19, "y": 13, "w": 10, "h": 7, "color": "#4a7c3f" },
+    { "name": "Farm",   "x": 31, "y": 13, "w": 15, "h": 7, "color": "#8a9a3f" },
+    { "name": "Plaza",  "x": 36, "y": 22, "w": 10, "h": 7, "color": "#9a9a8a" }
+  ],
+  "locations": [
+    { "name": "Bakery Oven",     "x": 5,  "y": 4,  "kinds": ["work"],              "job": "baker",    "desc": "A stone oven that is always too hot." },
+    { "name": "Bakery Counter",  "x": 7,  "y": 5,  "kinds": ["eat", "trade"],      "price": 3,        "desc": "Bread, pastries, and gossip." },
+    { "name": "Tavern Bar",      "x": 20, "y": 5,  "kinds": ["eat", "social", "trade"], "price": 5,   "desc": "Sticky counter, generous pours." },
+    { "name": "Tavern Hearth",   "x": 23, "y": 7,  "kinds": ["fun", "social"],                        "desc": "A fire that everyone claims to have lit." },
+    { "name": "Market Stall",    "x": 36, "y": 6,  "kinds": ["work", "trade"],     "job": "merchant", "desc": "Crates of things nobody needs." },
+    { "name": "Workshop Bench",  "x": 15, "y": 25, "kinds": ["work"],              "job": "smith",    "desc": "Hammers, sparks, and unfinished commissions." },
+    { "name": "Farm Field",      "x": 38, "y": 16, "kinds": ["work"],              "job": "farmer",   "desc": "Stubborn soil in long rows." },
+    { "name": "Town Hall Desk",  "x": 27, "y": 25, "kinds": ["work"],              "job": "clerk",    "desc": "Ledgers nobody audits." },
+    { "name": "Archive Desk",    "x": 31, "y": 25, "kinds": ["work"],              "job": "scribe",   "desc": "Records of a town that keeps forgetting itself." },
+    { "name": "Park Bench",      "x": 23, "y": 16, "kinds": ["fun", "social"],                        "desc": "Shade, birds, and eavesdropping." },
+    { "name": "Plaza Fountain",  "x": 40, "y": 25, "kinds": ["fun", "social"],                        "desc": "The water tastes faintly of coins." },
+    { "name": "Bed A1", "x": 4,  "y": 15, "kinds": ["sleep"], "desc": "A narrow bed." },
+    { "name": "Bed A2", "x": 7,  "y": 15, "kinds": ["sleep"], "desc": "A narrow bed." },
+    { "name": "Bed B1", "x": 12, "y": 15, "kinds": ["sleep"], "desc": "A narrow bed." },
+    { "name": "Bed B2", "x": 15, "y": 15, "kinds": ["sleep"], "desc": "A narrow bed." },
+    { "name": "Bed C1", "x": 4,  "y": 24, "kinds": ["sleep"], "desc": "A narrow bed." },
+    { "name": "Bed C2", "x": 7,  "y": 24, "kinds": ["sleep"], "desc": "A narrow bed." }
+  ],
+  "props": [
+    { "kind": "tree", "x": 20, "y": 14 }, { "kind": "tree", "x": 27, "y": 14 },
+    { "kind": "tree", "x": 21, "y": 18 }, { "kind": "tree", "x": 26, "y": 18 },
+    { "kind": "stall", "x": 33, "y": 4 }, { "kind": "stall", "x": 39, "y": 4 },
+    { "kind": "stall", "x": 33, "y": 8 }, { "kind": "stall", "x": 39, "y": 8 },
+    { "kind": "crop", "x": 34, "y": 15 }, { "kind": "crop", "x": 34, "y": 18 },
+    { "kind": "crop", "x": 42, "y": 15 }, { "kind": "crop", "x": 42, "y": 18 },
+    { "kind": "fountain", "x": 41, "y": 25 }
+  ]
+}

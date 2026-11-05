@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hollowmere — an AI society</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <main id="stage">
+        <div id="game"></div>
+        <div id="hud">
+          <span id="clock">—</span>
+          <span id="mode" class="pill">connecting…</span>
+          <button id="pause">Pause</button>
+          <button id="faster">Faster</button>
+          <button id="slower">Slower</button>
+          <button id="reset" class="danger">Reset world</button>
+        </div>
+      </main>
+
+      <aside id="panel">
+        <nav id="tabs">
+          <button data-tab="chronicle" class="active">Chronicle</button>
+          <button data-tab="inspector">Inspector</button>
+          <button data-tab="relations">Relations</button>
+          <button data-tab="usage">Models</button>
+        </nav>
+
+        <section id="tab-chronicle" class="tab active">
+          <div id="feed"></div>
+        </section>
+
+        <section id="tab-inspector" class="tab">
+          <div id="inspector"><p class="muted">Click a villager to look inside their head.</p></div>
+        </section>
+
+        <section id="tab-relations" class="tab">
+          <div id="relations"></div>
+        </section>
+
+        <section id="tab-usage" class="tab">
+          <div id="usage"></div>
+        </section>
+
+        <div id="godbox">
+          <select id="godtarget"><option value="">Everyone (an event)</option></select>
+          <textarea id="godtext" rows="2" placeholder="A fire breaks out in the Workshop…"></textarea>
+          <button id="godsend">Speak</button>
+        </div>
+      </aside>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Secrets & local world state
+.env
+backend/data/*.db
+backend/data/*.db-wal
+backend/data/*.db-shm
+
+# Node
+node_modules/
+dist/
+
+# Optional art (large, downloaded separately)
+frontend/public/assets/*.png

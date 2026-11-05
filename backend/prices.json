@@ -1,0 +1,22 @@
+{
+  "_comment": [
+    "USD per 1M tokens, keyed by your Foundry DEPLOYMENT name.",
+    "",
+    "!! THESE ARE PLACEHOLDERS ORDERED BY TIER, NOT VERIFIED RATES. !!",
+    "Copy the real numbers from the Foundry pricing page for your region and",
+    "overwrite them, otherwise the Models tab will confidently show you a",
+    "wrong figure. Anything unlisted falls back to '__default__' and is",
+    "flagged 'est' in the UI."
+  ],
+  "__default__": { "in": 0.50, "out": 2.00 },
+
+  "gpt-5.4-nano": { "in": 0.05, "out": 0.40 },
+  "gpt-5.4-mini": { "in": 0.25, "out": 2.00 },
+  "gpt-5": { "in": 1.25, "out": 10.00 },
+  "gpt-5.6-luna": { "in": 1.25, "out": 10.00 },
+  "gpt-6-luna": { "in": 2.50, "out": 15.00 },
+  "gpt-6.1-sol": { "in": 2.50, "out": 15.00 },
+  "grok-4.7": { "in": 3.00, "out": 15.00 },
+
+  "text-embedding-3-small": { "in": 0.02, "out": 0.0 }
+}

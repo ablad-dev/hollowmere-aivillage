@@ -1,0 +1,146 @@
+:root {
+  --bg: #12140f;
+  --panel: #1b1e18;
+  --panel-2: #23271f;
+  --ink: #e8e6dc;
+  --muted: #9a9b8e;
+  --accent: #d9b35c;
+  --line: #333a2d;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 14px;
+}
+
+#app { display: flex; height: 100vh; overflow: hidden; }
+
+#stage { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+#game { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+#game canvas { max-width: 100%; max-height: 100%; }
+
+#hud {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; background: var(--panel); border-top: 1px solid var(--line);
+}
+#clock { font-family: monospace; font-size: 15px; color: var(--accent); min-width: 180px; }
+
+button {
+  background: var(--panel-2); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 5px; padding: 5px 11px; cursor: pointer; font-size: 13px;
+}
+button:hover { border-color: var(--accent); }
+button.danger:hover { border-color: #b4553f; color: #ff9d85; }
+
+.pill {
+  font-size: 11px; padding: 2px 8px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--muted);
+}
+.pill.ok { color: #8fd17a; border-color: #3d5c35; }
+.pill.warn { color: #e0c067; border-color: #5c5235; }
+
+/* ------------------------------------------------------------------ panel */
+#panel {
+  width: 420px; flex-shrink: 0; display: flex; flex-direction: column;
+  background: var(--panel); border-left: 1px solid var(--line);
+}
+#tabs { display: flex; border-bottom: 1px solid var(--line); }
+#tabs button {
+  flex: 1; border: none; border-radius: 0; background: transparent;
+  color: var(--muted); padding: 10px 0;
+}
+#tabs button.active { color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
+
+.tab { display: none; flex: 1; overflow-y: auto; padding: 12px; }
+.tab.active { display: block; }
+
+.muted { color: var(--muted); }
+code { font-family: monospace; color: #9fc7e0; font-size: 12px; }
+
+/* ---------------------------------------------------------- chronicle feed */
+#feed .entry {
+  display: flex; gap: 8px; padding: 5px 6px; border-bottom: 1px solid #ffffff10;
+  line-height: 1.35; font-size: 13px;
+}
+#feed .when { color: var(--muted); font-family: monospace; font-size: 11px; white-space: nowrap; }
+#feed .dialogue .what { color: #ffe9b8; }
+#feed .reflection .what { color: #c0a8ff; font-style: italic; }
+#feed .event .what { color: #ff9d85; font-weight: 600; }
+#feed .plan .what { color: #8fd17a; }
+#feed .action .what { color: var(--muted); }
+
+/* ------------------------------------------------------------- inspector */
+.who { display: flex; gap: 10px; align-items: center; }
+.who h2 { margin: 0; font-size: 18px; }
+.who p { margin: 2px 0 0; font-size: 12px; }
+.swatch { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #0007; }
+.persona { color: var(--muted); font-size: 12.5px; line-height: 1.45; }
+.statline { display: flex; gap: 12px; font-size: 12px; color: var(--muted); flex-wrap: wrap; }
+blockquote {
+  margin: 10px 0; padding: 7px 10px; border-left: 3px solid var(--accent);
+  background: #ffffff08; font-style: italic; font-size: 13px;
+}
+h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+     margin: 16px 0 6px; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+
+.needs { margin: 10px 0; }
+.need { display: grid; grid-template-columns: 56px 1fr 30px; gap: 8px; align-items: center;
+        font-size: 11px; margin-bottom: 4px; color: var(--muted); }
+.need .track { height: 7px; background: #00000055; border-radius: 4px; overflow: hidden; }
+.need .track i { display: block; height: 100%; }
+
+.plan { margin: 0; padding-left: 18px; font-size: 12.5px; line-height: 1.6; }
+.plan i { color: var(--muted); }
+
+.rels, .mems, .models { list-style: none; margin: 0; padding: 0; }
+.rels li { padding: 6px 0; border-bottom: 1px solid #ffffff0d; font-size: 12.5px; }
+.aff.pos { color: #8fd17a; } .aff.neg { color: #e08070; }
+
+.mems li {
+  padding: 5px 7px; margin-bottom: 3px; border-radius: 4px; font-size: 12px;
+  background: #ffffff07; line-height: 1.4;
+}
+.mems .when { color: var(--muted); font-family: monospace; font-size: 10.5px; margin-right: 5px; }
+.mems .imp { color: var(--accent); font-size: 10px; float: right; }
+.mems .m-reflection { background: #6a4ea022; border-left: 2px solid #9d7ff0; }
+.mems .m-dialogue { background: #a08a3022; border-left: 2px solid var(--accent); }
+.mems .m-event { background: #a0503022; border-left: 2px solid #ff9d85; }
+
+/* ------------------------------------------------------------- relations */
+.matrix { border-collapse: collapse; font-size: 11px; width: 100%; }
+.matrix th, .matrix td { border: 1px solid var(--line); padding: 5px 4px; text-align: center; }
+.matrix th { color: var(--muted); font-weight: 600; }
+.matrix td.self { color: #444; }
+.usage { width: 100%; border-collapse: collapse; font-size: 12px; }
+.usage th, .usage td { border-bottom: 1px solid var(--line); padding: 5px; text-align: left; }
+.models li { padding: 4px 0; font-size: 12.5px; }
+
+.spend {
+  display: flex; align-items: baseline; gap: 10px; margin: 10px 0;
+  padding: 9px 11px; background: #ffffff08; border-radius: 6px;
+  border-left: 3px solid var(--accent); font-size: 12px; color: var(--muted);
+}
+.spend b { font-size: 19px; color: var(--accent); font-family: monospace; }
+.alert {
+  background: #5c2a1e; border: 1px solid #a3503a; color: #ffc4b4;
+  padding: 8px 10px; border-radius: 5px; font-size: 12.5px; line-height: 1.4;
+}
+.flag {
+  font-size: 9px; margin-left: 5px; padding: 1px 4px; border-radius: 3px;
+  background: #4a4030; color: var(--accent); vertical-align: middle;
+}
+.flag.est { background: #333a2d; color: var(--muted); }
+
+/* --------------------------------------------------------------- god box */
+#godbox { border-top: 1px solid var(--line); padding: 10px; display: grid; gap: 6px; }
+#godbox select, #godbox textarea {
+  background: var(--panel-2); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 5px; padding: 7px; font: inherit; font-size: 13px; resize: vertical;
+}
+#godbox textarea::placeholder { color: #6d6f63; }
